@@ -30,4 +30,13 @@ RSpec.describe StaticPagesController, type: :controller do
       assert_select "title", "About | #{base_title}"
     end
   end
+
+  describe "#contact" do
+    # 正常にレスポンスを返すこと
+    it "responds successfully" do
+      get :contact
+      expect(response).to be_success
+      assert_select "title", "Contact | #{base_title}"
+    end
+  end
 end
